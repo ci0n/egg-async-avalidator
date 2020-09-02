@@ -9,9 +9,7 @@ class HomeController extends Controller {
       telephone: [{ required: true, message: '必填' }],
     };
 
-    const errFields = await this.ctx.asyncValidate(rules, { telephone: '' }).catch(({ fields }) => fields);
-
-    // this.ctx.body = 'hi, ' + this.app.plugins.asyncValidator.name;
+    const errFields = await this.ctx.avalidate(rules, { telephone: '' }).catch(({ fields }) => fields);
 
     this.ctx.body = JSON.stringify(errFields);
   }

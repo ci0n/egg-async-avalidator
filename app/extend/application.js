@@ -2,15 +2,16 @@
 
 const { default: Schema } = require('async-validator');
 
-module.exports = app => {
+
+module.exports = {
 
   /**
    * async-validator factory
    * @param {Rules} rule validate rule
    * @return {AsyncValidator} async-validator schema instance
    */
-  app.avalidator = rule => {
+  avalidator(rule) {
     const validator = new Schema(rule);
     return validator;
-  };
+  },
 };

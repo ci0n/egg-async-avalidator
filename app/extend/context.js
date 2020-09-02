@@ -11,7 +11,18 @@ module.exports = {
    * @return {Promise} promise
    */
   avalidate(rule, source, options, callback) {
+
+    if (source instanceof Function) {
+      callback = source;
+      source = undefined;
+    }
+
+    if (options instanceof Function) {
+      callback = options;
+      options = undefined;
+    }
+
     source = source || this.request.body;
-    return this.app.avalidate(rule).validate(source, options, callback);
+    return this.app.avalidator(rule).validate(source, options, callback);
   },
 };
