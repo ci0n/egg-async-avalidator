@@ -1,16 +1,24 @@
-import AsyncValidator, { Rules, ValidateSource, ValidateOption, ErrorList, FieldErrorList } from "async-validator"
+import AsyncValidator, { Rules, ValidateSource, ValidateOption, ErrorList, FieldErrorList, RuleItem } from "async-validator"
 
 type Callback = (errors: ErrorList, fields: FieldErrorList) => void
 
+interface IRuleItem extends RuleItem {
+  message: string | any; // not only a 'string', it can be 'any'.
+}
+interface IRules extends Rules {
+  [field: string]: IRuleItem | IRuleItem[];
+}
+
+
 declare module 'egg' {
   interface Application {
-    avalidator: (rule: Rules) => AsyncValidator
+    avalidator: (rule: IRules) => AsyncValidator
   }
 
   interface Context {
     avalidate: (
       this: Context,
-      rule: Rules,
+      rule: IRules,
       source?: ValidateSource | Callback,
       options?: ValidateOption | Callback,
       callback?: Callback) => Promise<void>

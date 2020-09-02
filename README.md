@@ -29,6 +29,8 @@ Async validate plugin for egg
 
 See [async-validator](https://github.com/yiminghe/async-validator) for more information such as custom rule.
 
+The 'message' is not only a 'string', it can be 'any'.
+
 ## Install
 
 ```bash
