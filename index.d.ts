@@ -1,4 +1,4 @@
-import AsyncValidator, { Rules, ValidateSource, ValidateOption, ErrorList, FieldErrorList, RuleItem } from "async-validator"
+import AsyncValidator, { Rules, ValidateSource, ValidateOption, ErrorList, FieldErrorList, RuleItem, RuleType } from "async-validator"
 
 type Callback = (errors: ErrorList, fields: FieldErrorList) => void
 
@@ -7,6 +7,7 @@ export interface IRuleItem extends RuleItem {
 }
 export interface IRules extends Rules {
   [field: string]: IRuleItem | IRuleItem[];
+  type?: RuleType | string | any; // fix weak type error
 }
 
 
