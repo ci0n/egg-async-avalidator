@@ -2,10 +2,10 @@ import AsyncValidator, { Rules, ValidateSource, ValidateOption, ErrorList, Field
 
 type Callback = (errors: ErrorList, fields: FieldErrorList) => void
 
-interface IRuleItem extends RuleItem {
-  message: string | any; // not only a 'string', it can be 'any'.
+export interface IRuleItem extends RuleItem {
+  message?: string | any; // not only a 'string', it can be 'any'.
 }
-interface IRules extends Rules {
+export interface IRules extends Rules {
   [field: string]: IRuleItem | IRuleItem[];
 }
 
