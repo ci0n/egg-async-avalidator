@@ -4,10 +4,10 @@ type Callback = (errors: ErrorList, fields: FieldErrorList) => void
 
 export interface IRuleItem extends RuleItem {
   message?: string | any; // not only a 'string', it can be 'any'.
+  type?: RuleType | string | any; // fix weak type error
 }
 export interface IRules extends Rules {
   [field: string]: IRuleItem | IRuleItem[];
-  type?: RuleType | string | any; // fix weak type error
 }
 
 
