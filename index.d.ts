@@ -17,6 +17,7 @@ declare module 'egg' {
   }
 
   interface Context {
+
     avalidate: (
       this: Context,
       rule: IRules,
