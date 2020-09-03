@@ -61,7 +61,7 @@ see [config/config.default.js](config/config.default.js) for more detail.
 
 ```js
 const rules = {
-  name: {required: true, message: 'name Can not be empty'}
+  name: {required: true, message: 'name can not be empty'}
 }
 try {
   await app.asyncValidator(rules).validate({name: ''})
