@@ -64,10 +64,25 @@ const rules = {
   name: {required: true, message: 'name can not be empty'}
 }
 try {
-  await app.asyncValidator(rules).validate({name: ''})
+  await app.avalidator(rules).validate({name: ''})
 } catch(err) {
-  
+  // do someting
 }
+```
+
+or
+
+```js
+const rules = {
+  name: {required: true, message: 'name can not be empty'}
+}
+
+try {
+  await ctx.avalidate(rules, {name: ''})
+} catch(err) {
+  // do someting
+}
+
 ```
 
 ## License
