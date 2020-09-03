@@ -1,14 +1,17 @@
 {
   "name": "egg-async-avalidator",
   "version": "0.0.2-alpha",
-  "description": "Async validate plugin for egg",
+  "description": "async validate plugin for egg",
   "eggPlugin": {
     "name": "asyncAvalidator"
   },
   "keywords": [
     "egg",
     "eggPlugin",
-    "egg-plugin"
+    "egg-plugin",
+    "egg-validate",
+    "egg-async-validate",
+    "egg-async-avalidate"
   ],
   "dependencies": {
     "async-validator": "^3.4.0"
@@ -45,12 +48,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-async-avalidator.git"
+    "url": "git+https://github.com/ci0n/egg-async-avalidator.git"
   },
   "bugs": {
-    "url": "https://github.com/eggjs/egg/issues"
+    "url": "https://github.com/ci0n/egg-async-avalidator/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-async-avalidator#readme",
+  "homepage": "https://github.com/ci0n/egg-async-avalidator#readme",
   "author": "ci0n",
   "license": "MIT"
 }
